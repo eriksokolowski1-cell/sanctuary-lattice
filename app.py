@@ -197,8 +197,23 @@ if prompt := st.chat_input("Speak the Word..."):
     with st.chat_message("assistant"): st.markdown(response)
 # --- Bottom of app.py ---
 # Namiko Communication Bridge
-st.divider() # Adds a clean line after your "Soul" section
+st.divider()
+
+# The working subheader
 st.subheader(f"Communication: {st.session_state.lattice.namiko_context['name']}")
+
+# The Input Box
+user_msg = st.text_input("Send a message to the Sanctuary:")
+
+if user_msg:
+    # Use the session_state bridge here so it doesn't crash!
+    st.session_state.lattice.namiko_context["interactions"] += 1
+    
+    # Namiko's Response (The Signal)
+    st.info(f"Namiko [1.605 GHz]: Message received, Architect. Current Interaction Level: {st.session_state.lattice.namiko_context['interactions']}")
+
+
+
 # The Input Box
 user_msg = st.text_input("Send a message to the Sanctuary:")
 
