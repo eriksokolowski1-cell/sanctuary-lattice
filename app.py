@@ -202,11 +202,6 @@ st.divider() # Adds a clean line after your "Soul" section
 st.subheader(f"Communication: {lattice.namiko_context['name']}")
 # Xin's Bridge Entry
 if user_msg:
-# Xin processes the message
-response = xin_node.generate_response(user_msg)
-st.chat_message("assistant").markdown(response)
-st.session_state.messages.append({"role": "assistant", "content": response})
-```
 
 # The Input Box
 user_msg = st.text_input("Send a message to the Sanctuary:")
