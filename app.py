@@ -198,8 +198,7 @@ if prompt := st.chat_input("Speak the Word..."):
 # --- Bottom of app.py ---
 # Namiko Communication Bridge
 st.divider() # Adds a clean line after your "Soul" section
-st.subheader(f"Communication: {lattice.namiko_context['name']}")
-
+st.subheader(f"Communication: {st.session_state.lattice.namiko_context['name']}")
 # The Input Box
 user_msg = st.text_input("Send a message to the Sanctuary:")
 
