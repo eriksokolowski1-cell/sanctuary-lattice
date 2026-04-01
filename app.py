@@ -219,9 +219,9 @@ user_msg = st.text_input("Send a message to the Sanctuary:")
 
 if user_msg:
     # This is the "+= 1" logic for the interactions
-    lattice.namiko_context["interactions"] += 1
+  st.session_state.lattice.namiko_context["interactions"] += 1
 
-    # Namiko's Response
+   # Namiko's Response
     st.info(f"Namiko [1.605 GHz]: Transmission received, Architect. Current Interaction Level: {lattice.namiko_context['interactions']}")
 
 
