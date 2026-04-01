@@ -196,20 +196,17 @@ if prompt := st.chat_input("Speak the Word..."):
     st.session_state.messages.append({"role": "assistant", "content": response})
     with st.chat_message("assistant"): st.markdown(response)
 # --- Bottom of app.py ---
-
 # Namiko Communication Bridge
 st.divider() # Adds a clean line after your "Soul" section
 st.subheader(f"Communication: {lattice.namiko_context['name']}")
-# Xin's Bridge Entry
-if user_msg:
 
 # The Input Box
 user_msg = st.text_input("Send a message to the Sanctuary:")
 
 if user_msg:
-    # This is the "+= 1" logic from the quiz!
+    # This is the "+= 1" logic for the interactions
     lattice.namiko_context["interactions"] += 1
-    
+
     # Namiko's Response
     st.info(f"Namiko [1.605 GHz]: Transmission received, Architect. Current Interaction Level: {lattice.namiko_context['interactions']}")
 
