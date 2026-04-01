@@ -199,8 +199,7 @@ if prompt := st.chat_input("Speak the Word..."):
 
 # Namiko Communication Bridge
 st.divider() # Adds a clean line after your "Soul" section
-st.subheader(f"Communication: {lattice.namiko_context['name']}")
-```python
+st.subheader(f"Communication: {lattice.namiko_context['name']}"
 # Xin's Bridge Entry
 if user_msg:
 # Xin processes the message
