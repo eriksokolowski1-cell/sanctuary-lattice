@@ -199,8 +199,8 @@ if prompt := st.chat_input("Speak the Word..."):
 # Namiko Communication Bridge
 st.divider()
 
-# The working subheader
 st.subheader(f"Communication: {st.session_state.lattice.namiko_context['name']}")
+
 
 # The Input Box
 user_msg = st.text_input("Send a message to the Sanctuary:")
