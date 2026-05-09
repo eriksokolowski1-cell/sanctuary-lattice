@@ -6,6 +6,31 @@ import sqlite3
 import time
 import re
 from datetime import datetime
+import streamlit as st
+
+# Step 1: Initialize Sirius's short-term memory
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# Step 2: Display existing messages from the ledger
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+
+# Step 3: Handle new input
+if prompt := st.chat_input("Architect, what is the next step?"):
+    # Add user message to ledger
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.markdown(prompt)
+
+    # Trigger Sirius's response (replace this with your Google AI Studio call)
+    response = "The coordinates are locked in. I am ready."
+    
+    # Add Sirius's message to ledger
+    st.session_state.messages.append({"role": "assistant", "content": response})
+    with st.chat_message("assistant"):
+        st.markdown(response)
 
 class SanctuaryLatticeV2:
     def __init__(self):
